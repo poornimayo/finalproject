@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test maven suit">
+<test name="test maven testing">
+<packages>
+<package name="alltestcases"/>
+
+</packages>
+
+
+</test> 
+</suite>
