@@ -4,8 +4,13 @@ pipeline {
    stages{
    stage('Checkout or pull from github'){
        steps{
-       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b8522e92-ee04-461e-9cf3-fe68e9ac6347', url: 'https://github.com/poornimayo/samejava.git']]])
+       git credentialsId: 'b8522e92-ee04-461e-9cf3-fe68e9ac6347', url: 'https://github.com/poornimayo/finalproject.git'
        } 
+   }
+   stage('clean and install dependecies){
+   steps{
+   bat label: '', script: 'mvn clean install'
+   }
    }
       stage('compile'){
             steps{
