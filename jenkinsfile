@@ -7,7 +7,7 @@ pipeline {
        git credentialsId: 'b8522e92-ee04-461e-9cf3-fe68e9ac6347', url: 'https://github.com/poornimayo/finalproject.git'
        } 
    }
-   stage('clean and install dependecies){
+   stage('clean and install dependecies'){
    steps{
    bat label: '', script: 'mvn clean install'
    }
